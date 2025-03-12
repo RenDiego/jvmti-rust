@@ -151,7 +151,7 @@ impl Default for ConstantPool {
     }
 }
 
-#[derive(Default, Debug, PartialEq)]
+#[derive(Default, Debug, PartialEq, Clone)]
 pub struct ConstantPoolIndex {
     pub idx: usize
 }
@@ -162,7 +162,7 @@ impl ConstantPoolIndex {
     }
 }
 
-#[derive(Debug, PartialEq)]
+#[derive(Debug, PartialEq, Clone)]
 pub enum Constant {
     Utf8(Vec<u8>),
     Integer(u32),
@@ -193,7 +193,7 @@ impl Constant {
     }
 }
 
-#[derive(Debug, PartialEq)]
+#[derive(Debug, PartialEq, Clone)]
 pub enum ReferenceKind {
     GetField = 1,
     GetStatic = 2,
